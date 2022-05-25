@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formos-stilius.css" media="all">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="" method="POST" class="form">
+            <div class="form-group">
+                <label for="vardas" class="form-label">Jūsų vardas</label>
+                <input type="text" class="form-control" id="name" name="vardas" placeholder="Vardenis Pavardenis" tabindex="1" required>
+            </div>
+            <div class="form-group">
+                <label for="pastas" class="form-label">Jūsų el. paštas</label>
+                <input type="email" class="form-control" id="email" name="pastas" placeholder="vardenis@pastas.lt" tabindex="2" required>
+            </div>
+            <div class="form-group">
+                <label for="tema" class="form-label">Tema</label>
+                <input type="text" class="form-control" id="subject" name="tema" placeholder="Užsakymas nr. 1" tabindex="3" required>
+            </div>
+            <div class="form-group">
+                <label for="zinute" class="form-label">Jūsų žinutė</label>
+                <textarea rows="6" cols="30" id="message" name="zinute" placeholder="Savo laišką rašykite čia" tabindex="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="failas" class="form-label">Prisekite reikalingą dokumentą</label>
+                <form action="/action_page.php">
+                    <input type="file" id="failas" name="file_pav" tabindex="5">
+                </form>
+            </div>
+
+            <div>
+                <button type="submit" class="btn">Siųsti laišką</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
