@@ -1,0 +1,66 @@
+:root {
+    --font-color: #aaa;
+}
+
+body {
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-label {
+    font-size: 0.60em;
+    color: var(--font-color);
+    display: block;
+    opacity: 1;
+}
+
+.form-control {
+    border-color: #B1A2A2;
+    border-radius: 0;
+    border-style: none none solid none;
+    box-shadow: none;
+    width: 100;
+    font-size: 0.8em;
+}
+
+.form-control::placeholder {
+    color: #aaa;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: orange;
+    outline: none;
+}
+
+.btn {
+    background: 0 0 #B1A2A2;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    color: white;
+    font-size: 0.8em;
+    padding: 10 60px;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    border-color: #B1A2A2;
+    color: #B1A2A2;
+    background: 0 0 #fff;
+}
+
+textarea {
+    resize: none;
+}
