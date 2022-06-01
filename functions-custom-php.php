@@ -24,21 +24,25 @@
             $to = "interjeras@rsdesign.lt";
             $body = "";
         
-            $body .="Laiskas nuo ".$userName. "\r\n";
+            $body .="Nuo: ".$userName. "\r\n";
+
             $body .="El. pastas: ".$userEmail. "\r\n";
-            $body .="Tema ".$messageSubject. "\r\n";
-            $body .="Laiskas ".$message. "\r\n";
+
+            $body .="Tema: ".$messageSubject. "\r\n";
+
+            $body .="Tekstas: ".$message. "\r\n";
         
             mail($to, $messageSubject, $body);
 
             $messageSent = true;
         }
     }
-    
+
+    else {
+        $messageNotSent = "form_not_validated";
+    }
 get_header();
-
 ?>
-
 
 <html lang="en">
 
@@ -46,7 +50,9 @@ get_header();
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <style>
         h1 {text-align: center; color:#B1A2A2; font-size: 55px;}
-        <!--p {text-align: center;}-->
+        h3 {text-align: center; color:#B1A2A2; font-size: 40px;}
+        a {text-align: center; color:black; font-size: 20px;}
+        p {text-align: center;}
         <!--div {text-align: center;}-->
         body {
             font-family: 'Montserrat';font-size: 22px;
@@ -54,9 +60,19 @@ get_header();
         h1.light {
             font-weight: lighter;
         }
+        h3.light {
+            font-weight: lighter;
+        }
+        d1 {
+            width: 600px;
+        }
+        a.light {
+            font-weight: lighter;
+        }
     </style>
     <h1 class="light">KONTAKTAI</h1>
     <div class="d1">Veiklą vykdome Vilniuje ir miesto apskrityje. Jeigu turite klausimų dėl paslaugų, norite patarimų ar konsultacijos, užpildykite formą ir mes su jumis susisieksime,         arba naudokitės žėmiau pateiktais kontaktais.</div>
+    <br>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,20 +87,21 @@ get_header();
     ?>
     
         <h3>Jūsų laiškas išsiųstas. Greitu metu su jumis susisieksime</h3>
-
+        <p><a href="https://rsdesign.lt";>GRĮŽTI</a></p>
     <?php
     else:
     ?>
 
     <div class="container">
-        <form action="" method="POST" class="form">
+        <form action="" method="POST" class="form" style="display:inline-block">
+
             <div class="form-group">
                 <label for="vardas" class="form-label">Jūsų vardas</label>
                 <input type="text" class="form-control" id="name" name="vardas" placeholder="Vardenis Pavardenis" tabindex="1" required>
             </div>
             <div class="form-group">
                 <label for="pastas" class="form-label">Jūsų el. paštas</label>
-                <input type="email" class="form-control" id="email" name="pastas" placeholder="vardenis@pastas.lt" tabindex="2" required>
+                <input <?= $messageNotSent ?? "" ?> type="email" class="form-control" id="email" name="pastas" placeholder="vardenis@pastas.lt" tabindex="2" required>
             </div>
             <div class="form-group">
                 <label for="tema" class="form-label">Tema</label>
