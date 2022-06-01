@@ -64,3 +64,7 @@ body {
 textarea {
     resize: none;
 }
+
+.form_not_validated{
+    outline: 3px red; 
+}
